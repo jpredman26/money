@@ -45,4 +45,9 @@ class User extends Authenticatable
     public function accounts(){
         $this->hasMany('App/Account');
     }
+
+    public function categories()
+    {
+        return $this->hasMany('App\Category');
+    }
 }
