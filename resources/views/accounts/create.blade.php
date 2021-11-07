@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Add New Product</h2>
+                <h2>Add New Account</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('accounts.index') }}"> Back</a>
@@ -35,8 +35,24 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Detail:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
+                    <strong>Type:</strong>
+                    <select class="form-control" name="type" >
+                        <option value="bank">Bank Account</option>
+                        <option value="credit">Credit Card</option>
+                        <option value="loan">Loan</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Starting Balance:</strong>
+                    <input type="number" name="start_balance" class="form-control" placeholder="">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Current Balance:</strong>
+                    <input type="number" name="current_balance" class="form-control" placeholder="">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

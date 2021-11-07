@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Account;
+use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
@@ -45,7 +46,9 @@ class AccountController extends Controller
             'current_balance' => 'required',
         ]);
 
-        Account::create($request->all());
+        $account = new Account($request->all());
+        $account->user_id = Auth::user()->id;
+        $account->save();
 
         return redirect()->route('accounts.index')
             ->with('success','Account created successfully.');
